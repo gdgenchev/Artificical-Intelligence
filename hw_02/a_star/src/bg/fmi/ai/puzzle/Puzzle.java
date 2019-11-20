@@ -28,13 +28,12 @@ public class Puzzle {
                 return currentNode.getNumberOfMoves();
             }
 
-            for (Node state : currentNode.getAdjacentStates()) {
-                if (!closedStates.contains(state)) {
-                    openStates.add(state);
-                    closedStates.add(state);
+            for (Node node : currentNode.getAdjacentStates()) {
+                if (!closedStates.contains(node)) {
+                    openStates.add(node);
+                    closedStates.add(node);
                 }
             }
-
         }
 
         return -1;

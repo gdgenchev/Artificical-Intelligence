@@ -34,13 +34,14 @@ public class Puzzle {
                 count++;
             }
 
-            for (Node state : beamAdjacentStates) {
-                if (!closedStates.contains(state)) {
-                    openStates.add(state);
+            for (Node node : beamAdjacentStates) {
+                if (!closedStates.contains(node)) {
+                    openStates.add(node);
+                    closedStates.add(node);
+
                 }
             }
 
-            closedStates.add(currentNode);
         }
 
         return -1;
