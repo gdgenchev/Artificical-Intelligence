@@ -42,14 +42,16 @@ int Maze::fillParentsWithBfs() {
     std::queue<Point> queue;
     std::unordered_set<Point, PointHash> visited;
     queue.push(start);
-
+    visited.insert(start);
     int currentDistance = 0;
     while (!queue.empty()) {
         Point current = queue.front();
         queue.pop();
+
         if (current.distance > maxDistance) {
             return -1;
         }
+
         if (current == end && currentDistance < maxDistance) {
             return current.distance;
         }
@@ -76,7 +78,6 @@ int Maze::fillParentsWithBfs() {
                 visited.insert(child);
             }
         }
-        visited.insert(current);
     }
 
     return false;
