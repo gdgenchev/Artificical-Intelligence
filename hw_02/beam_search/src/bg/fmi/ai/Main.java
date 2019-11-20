@@ -4,9 +4,9 @@ import bg.fmi.ai.puzzle.Puzzle;
 
 public class Main {
   public static final int[][] START = {
-      {6, 5, 3},
-      {2, 4, 8},
-      {7, 0, 1}
+      {8, 7, 6},
+      {5, 4, 3},
+      {2, 1, 0}
   };
 
   public static final int[][] GOAL = {

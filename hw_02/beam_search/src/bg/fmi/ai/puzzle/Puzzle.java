@@ -13,17 +13,19 @@ public class Puzzle {
 
     public int findSolution(int beamWidth) {
         PriorityQueue<Node> openStates = new PriorityQueue<>();
-        openStates.add(new Node(startState));
         Set<Node> closedStates = new HashSet<>();
+        Node startNode = new Node(startState);
+        openStates.add(startNode);
+        openStates.add(startNode);
 
         while(!openStates.isEmpty()){
-            Node currentState = openStates.remove();
+            Node currentNode = openStates.remove();
 
-            if(Arrays.deepEquals(currentState.getGrid(), finalState)) {
-                return currentState.getNumberOfMoves();
+            if(Arrays.deepEquals(currentNode.getGrid(), finalState)) {
+                return currentNode.getNumberOfMoves();
             }
 
-            PriorityQueue<Node> adjacentStates = new PriorityQueue<>(currentState.getAdjacentStates());
+            PriorityQueue<Node> adjacentStates = new PriorityQueue<>(currentNode.getAdjacentStates());
             int adjacentStatesSize = adjacentStates.size();
             List<Node> beamAdjacentStates = new ArrayList<>(beamWidth);
             int count = 0;
@@ -38,7 +40,7 @@ public class Puzzle {
                 }
             }
 
-            closedStates.add(currentState);
+            closedStates.add(currentNode);
         }
 
         return -1;

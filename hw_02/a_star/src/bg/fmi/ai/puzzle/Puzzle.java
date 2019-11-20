@@ -16,23 +16,25 @@ public class Puzzle {
 
     public int findSolution() {
         PriorityQueue<Node> openStates = new PriorityQueue<>();
-        openStates.add(new Node(startState));
         Set<Node> closedStates = new HashSet<>();
+        Node startNode = new Node(startState);
+        openStates.add(startNode);
+        openStates.add(startNode);
 
         while(!openStates.isEmpty()){
-            Node currentState = openStates.remove();
+            Node currentNode = openStates.remove();
 
-            if(Arrays.deepEquals(currentState.getGrid(), finalState)) {
-                return currentState.getNumberOfMoves();
+            if(Arrays.deepEquals(currentNode.getGrid(), finalState)) {
+                return currentNode.getNumberOfMoves();
             }
 
-            for (Node state : currentState.getAdjacentStates()) {
+            for (Node state : currentNode.getAdjacentStates()) {
                 if (!closedStates.contains(state)) {
                     openStates.add(state);
+                    closedStates.add(state);
                 }
             }
 
-            closedStates.add(currentState);
         }
 
         return -1;
