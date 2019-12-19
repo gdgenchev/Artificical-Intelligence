@@ -1,0 +1,24 @@
+map 100 150
+compass 120 40
+Magic water 1600 200
+Magic boots 700 160
+Magic Bow 150 60
+Flying carpet 680 45
+Magic Ring 270 60
+Magic Glasses 385 48
+Life elixir 230 30
+Magic animal 520 10
+Sword 1700 400
+Shield 500 300
+Teleport 240 15
+Magic berries 480 10
+Magic umbrella 730 40
+flower 420 70
+Knife 430 75
+Tent 220 80
+Garlic 70 20
+Silver Elixir 180 12
+Magic Hat 40 50
+magic beer 300 10
+Silver Arrows 900 20
+Mystic Orb 2000 150
