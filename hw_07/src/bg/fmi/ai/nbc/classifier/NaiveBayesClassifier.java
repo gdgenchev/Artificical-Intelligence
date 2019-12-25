@@ -39,7 +39,7 @@ public class NaiveBayesClassifier {
   private EnumMap<Gender, Integer> genderToCount;
 
   /**
-   * All the date is stored in this list
+   * All the data is stored in this list
    */
   private List<Human> humans;
 
@@ -54,7 +54,7 @@ public class NaiveBayesClassifier {
   /**
    * This method is used to train the model.
    *
-   * Firstly, all the date is stored in our Humans list
+   * Firstly, all the data is stored in our Humans list
    * After that, we calculate the means
    * Finally, we calculate the variances
    */
